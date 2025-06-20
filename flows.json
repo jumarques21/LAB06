@@ -1,0 +1,677 @@
+[
+    {
+        "id": "7b9ed63e.2138f8",
+        "type": "tab",
+        "label": "Basic_Flow",
+        "disabled": false,
+        "info": "# Basic flow to start with STM32CubeMonitor."
+    },
+    {
+        "id": "1ebbb430.dac7dc",
+        "type": "ui_chartst",
+        "z": "7b9ed63e.2138f8",
+        "group": "f9c34dde.1e2f4",
+        "name": "myChart",
+        "order": 4,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 580,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "6013fb0b.5b7504",
+        "type": "acquisition out",
+        "z": "7b9ed63e.2138f8",
+        "name": "myProbe_Out",
+        "probeconfig": "3b5fab57fb845b5d",
+        "x": 540,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4a573fb0.4bc99",
+        "type": "acquisition in",
+        "z": "7b9ed63e.2138f8",
+        "name": "myProbe_In",
+        "probeconfig": "3b5fab57fb845b5d",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "a7c3e070.5a6c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d59587ff.cd1748",
+        "type": "variables",
+        "z": "7b9ed63e.2138f8",
+        "groupname": "myVariables",
+        "accesspoint": 0,
+        "execonfig": "918435d46cd2b28b",
+        "variablelist": [],
+        "triggerstartmode": "manual",
+        "triggername": "BLUELED",
+        "triggerthreshold": "30000",
+        "frequency": "",
+        "frequencyType": "0",
+        "snapshotheader": "",
+        "mode": "direct",
+        "lastImportedTime": 1732583205835,
+        "openStatus": true,
+        "x": 330,
+        "y": 120,
+        "wires": [
+            [
+                "6013fb0b.5b7504",
+                "789540c64e660004"
+            ],
+            [
+                "f14d0398.f1861"
+            ]
+        ]
+    },
+    {
+        "id": "fc00295e.79ada8",
+        "type": "ui_button",
+        "z": "7b9ed63e.2138f8",
+        "name": "",
+        "group": "f9c34dde.1e2f4",
+        "order": 3,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "Clear Graphs",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "clear",
+        "x": 430,
+        "y": 380,
+        "wires": [
+            [
+                "1ebbb430.dac7dc"
+            ]
+        ]
+    },
+    {
+        "id": "5fd51c96.2330e4",
+        "type": "ui_button",
+        "z": "7b9ed63e.2138f8",
+        "name": "",
+        "group": "f9c34dde.1e2f4",
+        "order": 1,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "START Acquisition",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "start",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "d59587ff.cd1748"
+            ]
+        ]
+    },
+    {
+        "id": "52eadfe3.2c8cc",
+        "type": "ui_button",
+        "z": "7b9ed63e.2138f8",
+        "name": "",
+        "group": "f9c34dde.1e2f4",
+        "order": 2,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "label": "STOP Acquisition",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "stop",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "d59587ff.cd1748"
+            ]
+        ]
+    },
+    {
+        "id": "a7c3e070.5a6c",
+        "type": "processing",
+        "z": "7b9ed63e.2138f8",
+        "groupname": "myVariables",
+        "groupid": "d59587ff.cd1748",
+        "expressions": [],
+        "statistics": [],
+        "logmode": "no",
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "1ebbb430.dac7dc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f14d0398.f1861",
+        "type": "ui_toast",
+        "z": "7b9ed63e.2138f8",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 530,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "789540c64e660004",
+        "type": "ui_write",
+        "z": "7b9ed63e.2138f8",
+        "group": "f9c34dde.1e2f4",
+        "name": "",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "x": 390,
+        "y": 40,
+        "wires": [
+            [
+                "6013fb0b.5b7504",
+                "4f39bec9fb16b95a"
+            ]
+        ]
+    },
+    {
+        "id": "064aaa4fba939c12",
+        "type": "inject",
+        "z": "7b9ed63e.2138f8",
+        "name": "DESLIGADO",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 110,
+        "y": 520,
+        "wires": [
+            [
+                "d8b290f1263aecf3"
+            ]
+        ]
+    },
+    {
+        "id": "530e24db78776090",
+        "type": "inject",
+        "z": "7b9ed63e.2138f8",
+        "name": "LIGADO",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 100,
+        "y": 580,
+        "wires": [
+            [
+                "d8b290f1263aecf3"
+            ]
+        ]
+    },
+    {
+        "id": "47d488d0749dfd12",
+        "type": "debug",
+        "z": "7b9ed63e.2138f8",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "4f39bec9fb16b95a",
+        "type": "debug",
+        "z": "7b9ed63e.2138f8",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "d8b290f1263aecf3",
+        "type": "template",
+        "z": "7b9ed63e.2138f8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n   \"variablelist\":[\n      {\n         \"address\":\"0x200000b8\",\n         \"type\":1,\n         \"value\":\"{{payload}}\"\n      }\n   ],\n   \"accesspoint\":0\n}",
+        "output": "json",
+        "x": 300,
+        "y": 560,
+        "wires": [
+            [
+                "ef78501db968f1f3"
+            ]
+        ]
+    },
+    {
+        "id": "ef78501db968f1f3",
+        "type": "change",
+        "z": "7b9ed63e.2138f8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "write",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 560,
+        "wires": [
+            [
+                "47d488d0749dfd12",
+                "6013fb0b.5b7504"
+            ]
+        ]
+    },
+    {
+        "id": "14580a8e8f9e5c7a",
+        "type": "mqtt in",
+        "z": "7b9ed63e.2138f8",
+        "name": "",
+        "topic": "Renato",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5d8a03cddaf49b66",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 380,
+        "wires": [
+            [
+                "d8b290f1263aecf3"
+            ]
+        ]
+    },
+    {
+        "id": "f9c34dde.1e2f4",
+        "type": "ui_group",
+        "name": "Chart",
+        "tab": "17d09b07.741a55",
+        "order": 1,
+        "disp": true,
+        "width": 15,
+        "collapse": false
+    },
+    {
+        "id": "3b5fab57fb845b5d",
+        "type": "probe",
+        "probeid": "49FF74066772574833071767",
+        "probename": "ST-Link v2 49FF74066772574833071767",
+        "protocol": "SWD",
+        "frequency": "1.8 MHz - Default",
+        "probeproperty": "{\"SWD\":[\"4.6 MHz\",\"1.8 MHz - Default\",\"950 kHz\",\"400 kHz\",\"150 kHz\"],\"JTAG\":[\"18 MHz\",\"9 MHz\",\"4.5 MHz\",\"2.25 MHz\",\"1.12 MHz - Default\",\"560 kHz\",\"280 kHz\",\"140 kHz\"]}",
+        "probeversion": "ST Link firmware version V2.J45",
+        "connectionType": "p2p",
+        "nickname": ""
+    },
+    {
+        "id": "918435d46cd2b28b",
+        "type": "exe-config",
+        "name": "Ronaldinho",
+        "exefile": "C:\\Users\\renat\\OneDrive\\Documentos\\LAB06\\LAB06\\build\\Debug\\Lab06.elf",
+        "exefolder": "C:/Users/renat/OneDrive/Documentos/LAB06/LAB06/build/Debug",
+        "exevariablelist": [
+            {
+                "address": "0x08002f9c",
+                "name": "AHBPrescTable[0]",
+                "type": 1
+            },
+            {
+                "address": "0x200000b8",
+                "name": "BLUELED",
+                "type": 1,
+                "checked": true
+            },
+            {
+                "address": "0x20000060",
+                "name": "hadc1.DMA_Handle",
+                "type": 5
+            },
+            {
+                "address": "0x2000006c",
+                "name": "hadc1.ErrorCode",
+                "type": 5
+            },
+            {
+                "address": "0x2000002c",
+                "name": "hadc1.Init.ClockPrescaler",
+                "type": 5
+            },
+            {
+                "address": "0x20000040",
+                "name": "hadc1.Init.ContinuousConvMode",
+                "type": 2
+            },
+            {
+                "address": "0x20000034",
+                "name": "hadc1.Init.DataAlign",
+                "type": 5
+            },
+            {
+                "address": "0x20000048",
+                "name": "hadc1.Init.DiscontinuousConvMode",
+                "type": 2
+            },
+            {
+                "address": "0x20000058",
+                "name": "hadc1.Init.DMAContinuousRequests",
+                "type": 2
+            },
+            {
+                "address": "0x2000003c",
+                "name": "hadc1.Init.EOCSelection",
+                "type": 5
+            },
+            {
+                "address": "0x20000050",
+                "name": "hadc1.Init.ExternalTrigConv",
+                "type": 5
+            },
+            {
+                "address": "0x20000054",
+                "name": "hadc1.Init.ExternalTrigConvEdge",
+                "type": 5
+            },
+            {
+                "address": "0x20000044",
+                "name": "hadc1.Init.NbrOfConversion",
+                "type": 5
+            },
+            {
+                "address": "0x2000004c",
+                "name": "hadc1.Init.NbrOfDiscConversion",
+                "type": 5
+            },
+            {
+                "address": "0x20000030",
+                "name": "hadc1.Init.Resolution",
+                "type": 5
+            },
+            {
+                "address": "0x20000038",
+                "name": "hadc1.Init.ScanConvMode",
+                "type": 5
+            },
+            {
+                "address": "0x20000028",
+                "name": "hadc1.Instance",
+                "type": 5
+            },
+            {
+                "address": "0x20000064",
+                "name": "hadc1.Lock",
+                "type": 2
+            },
+            {
+                "address": "0x2000005c",
+                "name": "hadc1.NbrOfCurrentConversionRank",
+                "type": 5
+            },
+            {
+                "address": "0x20000068",
+                "name": "hadc1.State",
+                "type": 5
+            },
+            {
+                "address": "0x2000008c",
+                "name": "htim2.Channel",
+                "type": 2
+            },
+            {
+                "address": "0x200000b2",
+                "name": "htim2.ChannelNState[0]",
+                "type": 2
+            },
+            {
+                "address": "0x200000ae",
+                "name": "htim2.ChannelState[0]",
+                "type": 2
+            },
+            {
+                "address": "0x200000b6",
+                "name": "htim2.DMABurstState",
+                "type": 2
+            },
+            {
+                "address": "0x20000090",
+                "name": "htim2.hdma[0]",
+                "type": 5
+            },
+            {
+                "address": "0x20000088",
+                "name": "htim2.Init.AutoReloadPreload",
+                "type": 5
+            },
+            {
+                "address": "0x20000080",
+                "name": "htim2.Init.ClockDivision",
+                "type": 5
+            },
+            {
+                "address": "0x20000078",
+                "name": "htim2.Init.CounterMode",
+                "type": 5
+            },
+            {
+                "address": "0x2000007c",
+                "name": "htim2.Init.Period",
+                "type": 5
+            },
+            {
+                "address": "0x20000074",
+                "name": "htim2.Init.Prescaler",
+                "type": 5
+            },
+            {
+                "address": "0x20000084",
+                "name": "htim2.Init.RepetitionCounter",
+                "type": 5
+            },
+            {
+                "address": "0x20000070",
+                "name": "htim2.Instance",
+                "type": 5
+            },
+            {
+                "address": "0x200000ac",
+                "name": "htim2.Lock",
+                "type": 2
+            },
+            {
+                "address": "0x200000ad",
+                "name": "htim2.State",
+                "type": 2
+            },
+            {
+                "address": "0x200000d0",
+                "name": "pFlash.Address",
+                "type": 5
+            },
+            {
+                "address": "0x200000cc",
+                "name": "pFlash.Bank",
+                "type": 5
+            },
+            {
+                "address": "0x200000d8",
+                "name": "pFlash.ErrorCode",
+                "type": 5
+            },
+            {
+                "address": "0x200000d4",
+                "name": "pFlash.Lock",
+                "type": 2
+            },
+            {
+                "address": "0x200000c0",
+                "name": "pFlash.NbSectorsToErase",
+                "type": 5
+            },
+            {
+                "address": "0x200000bc",
+                "name": "pFlash.ProcedureOnGoing",
+                "type": 2
+            },
+            {
+                "address": "0x200000c8",
+                "name": "pFlash.Sector",
+                "type": 5
+            },
+            {
+                "address": "0x200000c4",
+                "name": "pFlash.VoltageForErase",
+                "type": 1
+            },
+            {
+                "address": "0x20000008",
+                "name": "SystemCoreClock",
+                "type": 5
+            },
+            {
+                "address": "0x200000dc",
+                "name": "uwTick",
+                "type": 5
+            },
+            {
+                "address": "0x20000004",
+                "name": "uwTickFreq",
+                "type": 2
+            },
+            {
+                "address": "0x20000000",
+                "name": "uwTickPrio",
+                "type": 5
+            }
+        ],
+        "expand": false,
+        "filename": "Lab06.elf",
+        "exeModifiedTime": 1732582615648,
+        "configLastUpdate": 1732583205388
+    },
+    {
+        "id": "5d8a03cddaf49b66",
+        "type": "mqtt-broker",
+        "name": "Lab06",
+        "broker": "mqtt.adrianoruseler.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "17d09b07.741a55",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
