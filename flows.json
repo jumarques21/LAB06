@@ -395,8 +395,8 @@
         "id": "918435d46cd2b28b",
         "type": "exe-config",
         "name": "Ronaldinho",
-        "exefile": "C:\\Users\\renat\\OneDrive\\Documentos\\LAB06\\LAB06\\build\\Debug\\Lab06.elf",
-        "exefolder": "C:/Users/renat/OneDrive/Documentos/LAB06/LAB06/build/Debug",
+        "exefile": "C:\\Users\\Aluno\\OneDrive\\Documentos\\LAB06\\LAB06\\build\\Debug\\Lab06.elf",
+        "exefolder": "C:/Users/Aluno/OneDrive/Documentos/LAB06/LAB06/build/Debug",
         "exevariablelist": [
             {
                 "address": "0x08002f9c",
